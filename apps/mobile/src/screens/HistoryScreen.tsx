@@ -1,7 +1,7 @@
 import { DAY_MS, MONTH_MS, MoodEntry, TimeFilter, WEEK_MS, removeEntry, useAppDispatch, useAppSelector } from '@mood-tracker/store';
 import { ColorTheme, radii, spacing, typography } from '@mood-tracker/ui';
 import React, { useMemo, useState } from 'react';
-import { Alert, FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Alert, FlatList, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { MoodCard } from '../components/MoodCard';
 import { TextView } from '../components/TextView';
@@ -62,6 +62,12 @@ export function HistoryScreen() {
   }, [sections]);
 
   const handleDelete = (id: string) => {
+    if (Platform.OS === 'web') {
+      if (window.confirm('Remove this mood log?')) {
+        dispatch(removeEntry(id));
+      }
+      return;
+    }
     Alert.alert('Delete entry', 'Remove this mood log?', [
       { text: 'Cancel', style: 'cancel' },
       { text: 'Delete', style: 'destructive', onPress: () => dispatch(removeEntry(id)) },
