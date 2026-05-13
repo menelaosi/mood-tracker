@@ -1,0 +1,36 @@
+{
+  "name": "mood-tracker-monorepo",
+  "private": true,
+  "workspaces": {
+    "packages": ["apps/*", "packages/*"],
+    "nohoist": [
+      "**/react",
+      "**/react/**",
+      "**/react-dom",
+      "**/react-dom/**",
+      "**/react-native",
+      "**/react-native/**",
+      "**/react-redux",
+      "**/react-redux/**",
+      "**/@reduxjs/toolkit",
+      "**/@reduxjs/toolkit/**",
+      "**/expo",
+      "**/expo/**",
+      "**/@expo",
+      "**/@expo/**"
+    ]
+  },
+  "scripts": {
+    "mobile": "yarn workspace @mood-tracker/mobile start",
+    "web": "yarn workspace @mood-tracker/mobile web",
+    "build:web": "yarn workspace @mood-tracker/mobile build:web",
+    "ios": "yarn workspace @mood-tracker/mobile ios",
+    "android": "yarn workspace @mood-tracker/mobile android",
+    "expo": "yarn workspace @mood-tracker/mobile expo"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3",
+    "turbo": "^2.3.3",
+    "typescript": "~5.3.3"
+  }
+}

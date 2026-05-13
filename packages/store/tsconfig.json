@@ -1,0 +1,16 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": "src",
+    "paths": {
+      "@reduxjs/toolkit": ["../../apps/mobile/node_modules/@reduxjs/toolkit"],
+      "@reduxjs/toolkit/*": ["../../apps/mobile/node_modules/@reduxjs/toolkit/*"],
+      "react-redux": ["../../apps/mobile/node_modules/react-redux"],
+      "react-redux/*": ["../../apps/mobile/node_modules/react-redux/*"],
+      "react": ["../../apps/mobile/node_modules/react"],
+      "react/*": ["../../apps/mobile/node_modules/react/*"]
+    }
+  },
+  "include": ["src"]
+}

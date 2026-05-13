@@ -1,0 +1,18 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@mood-tracker/store": ["../../packages/store/src/index.ts"],
+      "@mood-tracker/ui": ["../../packages/ui/src/index.ts"],
+      "@reduxjs/toolkit": ["./node_modules/@reduxjs/toolkit"],
+      "@reduxjs/toolkit/*": ["./node_modules/@reduxjs/toolkit/*"],
+      "react-redux": ["./node_modules/react-redux"],
+      "react-redux/*": ["./node_modules/react-redux/*"]
+    },
+    "typeRoots": ["./node_modules/@types", "../../node_modules/@types"],
+    "types": ["react", "uuid"]
+  },
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}
