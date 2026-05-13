@@ -1,12 +1,12 @@
-import React from 'react';
-import { TouchableOpacity, Text } from 'react-native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 import { spacing } from '@mood-tracker/ui';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import React from 'react';
+import { Text, TouchableOpacity } from 'react-native';
 import { useTheme } from '../context/ThemeContext';
-import { LogMoodScreen } from '../screens/LogMoodScreen';
 import { DashboardScreen } from '../screens/DashboardScreen';
 import { HistoryScreen } from '../screens/HistoryScreen';
+import { LogMoodScreen } from '../screens/LogMoodScreen';
 
 export type RootTabParamList = {
   Log: undefined;
@@ -62,7 +62,7 @@ export function AppNavigator() {
       <Tab.Screen
         name="Log"
         component={LogMoodScreen}
-        options={{ title: 'Log Mood', headerTitle: 'How are you feeling?' }}
+        options={{ title: 'Log Mood', headerTitle: 'Mood Logging' }}
       />
       <Tab.Screen name="Dashboard" component={DashboardScreen} />
       <Tab.Screen name="History" component={HistoryScreen} />
