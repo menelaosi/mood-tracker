@@ -51,11 +51,8 @@ export function AppNavigator() {
             borderTopColor: colors.border,
             paddingBottom: 4,
           },
-          headerStyle: {
-            backgroundColor: colors.surface,
-            shadowColor: 'transparent',
-            elevation: 0,
-          },
+          headerStyle: { backgroundColor: colors.surface },
+          headerShadowVisible: false,
           headerTintColor: colors.textPrimary,
           headerTitleStyle: { fontWeight: '700' as const },
           headerRight: () => <ThemeToggle />,

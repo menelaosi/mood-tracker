@@ -21,16 +21,16 @@
     ]
   },
   "scripts": {
-    "mobile": "yarn workspace @mood-tracker/mobile start",
-    "web": "yarn workspace @mood-tracker/mobile web",
-    "build:web": "yarn workspace @mood-tracker/mobile build:web",
-    "ios": "yarn workspace @mood-tracker/mobile ios",
-    "android": "yarn workspace @mood-tracker/mobile android",
-    "expo": "yarn workspace @mood-tracker/mobile expo"
+    "start": "cd apps/mobile && npx expo start --clear",
+    "web": "cd apps/mobile && npx expo start --web --clear",
+    "ios": "cd apps/mobile && npx expo start --ios --clear",
+    "android": "cd apps/mobile && npx expo start --android --clear",
+    "build:web": "cd apps/mobile && npx expo export --platform web",
+    "typecheck": "cd apps/mobile && npx tsc --noEmit"
   },
   "devDependencies": {
-    "prettier": "^3.3.3",
-    "turbo": "^2.3.3",
-    "typescript": "~5.3.3"
+    "prettier": "^3.8.3",
+    "turbo": "^2.9.12",
+    "typescript": "~5.9.0"
   }
 }
