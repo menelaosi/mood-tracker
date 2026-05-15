@@ -2,7 +2,7 @@
   "name": "mood-tracker-monorepo",
   "private": true,
   "workspaces": {
-    "packages": ["apps/*", "packages/*"],
+    "packages": ["apps", "packages/*"],
     "nohoist": [
       "**/react",
       "**/react/**",
@@ -21,12 +21,12 @@
     ]
   },
   "scripts": {
-    "start": "cd apps/mobile && npx expo start --clear",
-    "web": "cd apps/mobile && npx expo start --web --clear",
-    "ios": "cd apps/mobile && npx expo start --ios --clear",
-    "android": "cd apps/mobile && npx expo start --android --clear",
-    "build:web": "cd apps/mobile && npx expo export --platform web",
-    "typecheck": "cd apps/mobile && npx tsc --noEmit"
+    "start": "cd apps && npx expo start --clear",
+    "web": "cd apps && npx expo start --web --clear",
+    "ios": "cd apps && npx expo start --ios --clear",
+    "android": "cd apps && npx expo start --android --clear",
+    "build:web": "cd apps && npx expo export --platform web",
+    "typecheck": "cd apps && npx tsc --noEmit"
   },
   "devDependencies": {
     "prettier": "^3.8.3",
